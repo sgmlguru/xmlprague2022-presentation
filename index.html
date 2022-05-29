@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Use the Markup, Stupid!</title>
+
+		<link rel="stylesheet" href="../reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h1>Use the Markup, Stupid!</h1>
+					</section>
+				</section>
+				
+				
+				<section>
+					<section>
+						<h3>Why Are We Here?</h3>
+						
+						<aside class="notes">
+							<p>This is something of a rant</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>Product Life Management (PLM)</h5>
+						
+						<!-- PLM image -->
+						<!-- Engineering data, parts, etc -->
+						
+						<aside class="notes">
+							<p>But let's start with some context</p>
+							<p></p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>Bill of Materials and the Product</h5>
+						
+						<!-- Generating topics from engineering data -->
+						<!-- CAD data image -->
+						
+						<aside class="notes">
+							<p>BOM? Byte Order Mark?</p>
+							<p>BOM is all items required to make a group (kit)</p>
+							<p>Parts, kits, assemblies...</p>
+							<p>XML generated from engineering data</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>Topic-based Content</h5>
+						
+						<!-- DITA and S1000D image -->
+						
+						<aside class="notes">
+							<p>The PLM world loves DITA</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>Building Documents from Topics</h5>
+						
+						<!-- Maps, PMs -->
+						<!-- Map image? -->
+						
+						<aside class="notes">
+							<p>This is where the problems start in earnest</p>
+						</aside>
+					</section>
+					
+				</section>
+				
+				
+				
+				<section>
+					<section>
+						<h3>A (Very Quick) DITA Refresher</h3>
+					</section>
+					
+					<section>
+						<h5>Topics</h5>
+						
+						<pre class="xml">
+							<code data-trim data-noescape>&lt;topic id="topic_fjt_3bt_2tb">
+    &lt;title>Topic A&lt;/title>
+    &lt;prolog>
+        &lt;author>Mark Up&lt;/author>
+    &lt;/prolog>
+    &lt;body>
+        &lt;p>Topic content.&lt;/p>
+    &lt;/body>
+&lt;/topic></code>
+						</pre>
+						
+						<aside class="notes">
+							<p>Many topic types, same principle</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>Maps</h5>
+						
+						<pre class="xml stretch" style="font-size: 16pt">
+							<code data-trim data-noescape>&lt;map id=&quot;id-map-AtoE-nested&quot;&gt;
+    &lt;title&gt;Topicrefs A to E Nested&lt;/title&gt;
+    &lt;topicref
+        href=&quot;topicA.dita&quot;
+        navtitle=&quot;tref A, level 1&quot;&gt;
+        &lt;topicref
+            href=&quot;topicB.dita&quot;
+            navtitle=&quot;tref B, level 2&quot;&gt;
+            &lt;topicref
+                href=&quot;topicD.dita&quot;
+                navtitle=&quot;tref D, level 3&quot;/&gt;
+            &lt;topicref
+                href=&quot;topicE.dita&quot;
+                navtitle=&quot;tref E, level 3&quot;/&gt;
+        &lt;/topicref&gt;
+        &lt;topicref
+            href=&quot;topicC.dita&quot;
+            navtitle=&quot;tref C, level 2&quot;/&gt;
+    &lt;/topicref&gt;
+&lt;/map&gt;</code>
+						</pre>
+						
+						<aside class="notes">
+							<p>Maps and bookmaps - same principle</p>
+							<p>Note nested topicrefs</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>Published Table of Contents</h5>
+						
+						<img src="img/toc-nested-AtoE.png" alt="ToC with nested A to E topics"/>
+						
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					
+					<section>
+						<h3>Reuse</h3>
+						
+						<pre class="xml">
+							<code data-trim data-noescape>&lt;map id="id-map-AB-siblings">
+    &lt;title>Topicrefs A and B As Siblings&lt;/title>
+    &lt;topicref href="topicA.dita" navtitle="tref A, level 1"/>
+    &lt;topicref href="topicB.dita" navtitle="tref B, level 1"/>
+&lt;/map></code>
+						</pre>
+						
+						<aside class="notes">
+							<p>Same topics, differently reused</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>Building Blocks</h5>
+						
+						<!-- LEGO building blocks -->
+						<img src="img/lego-blocks.jpg" alt="Lego blocks"/>
+						
+						<aside class="notes">
+							<p>Topics are building blocks</p>
+							<p>No relation to each other... right?</p>
+						</aside>
+					</section>
+				</section>
+				
+				
+				
+				<section>
+					<section>
+						<h3>The PLM Product</h3>
+					</section>
+					
+					<section>
+						<h5>Publication Structure</h5>
+						
+						<img src="img/nested-map-publication-structure.png" alt="Publication Structure"/>
+						
+						<aside class="notes">
+							<p>Engineering data and publication structure</p>
+						</aside>
+					</section>
+					
+					
+				</section>
+				
+				
+				
+				<section>
+					
+					<section>
+						<pre class="xml">
+							<code data-trim data-noescape></code>
+						</pre>
+					</section>
+					
+				</section>
+				
+				
+				
+				<section>
+					<section>
+						<h3>In Closing</h3>
+					</section>
+					
+				</section>
+				
+			</div>
+		</div>
+
+		<script src="../reveal.js/dist/reveal.js"></script>
+		<script src="../reveal.js/plugin/notes/notes.js"></script>
+		<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
