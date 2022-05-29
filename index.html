@@ -187,13 +187,144 @@
 					</section>
 					
 					<section>
+						<h5>The Usual CMS Features</h5>
+						
+						<ul>
+							<li>Single-source publishing</li>
+							<li>Version management</li>
+							<li>Engineering data</li>
+							<li>...</li>
+						</ul>
+					</section>
+					
+					<section>
 						<h5>Publication Structure</h5>
 						
 						<img src="img/nested-map-publication-structure.png" alt="Publication Structure"/>
 						
+						<p>This is my DITA map, imported</p>
+						
+						<p class="fragment" style="font-style: italic">What's there not to like?</p>
+						
 						<aside class="notes">
-							<p>Engineering data and publication structure</p>
+							<p>Maps visual representation</p>
+							<p>Drag and drop</p>
+							<p>Impact analysis</p>
+							<p>Loads of features</p>
 						</aside>
+					</section>
+					
+					<section>
+						<h5>This is not XML at all</h5>
+						
+						<aside class="notes">
+							<p>The underlying model is a SQL database</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>Getting Rid of the Angled Brackets</h5>
+						
+						<p>Importing:</p>
+						
+						<ol>
+							<li class="fragment">Graphics</li>
+							<li class="fragment">Topics</li>
+							<li class="fragment">Maps</li>
+						</ol>
+						
+						<p class="fragment">Known as <span style="font-style: italic">decompose</span></p>
+						
+						<aside class="notes">
+							<p>Rules govern all of this</p>
+							<p>Mapped into database objects and relations</p>
+							<p>Publication structure based on existing Structure Manager</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>A Reminder</h5>
+						
+						<pre class="xml">
+							<code data-trim data-noescape>&lt;topicref href="A.dita">
+    &lt;topicref href="B.dita"/>
+&lt;/topicref></code>
+						</pre>
+						
+						<pre class="xml fragment">
+							<code data-trim data-noescape>&lt;topicref href="A.dita">
+    &lt;topicref href="B.dita"/>
+    &lt;topicref href="C.dita"/>
+&lt;/topicref></code>
+						</pre>
+						
+						<p class="fragment" style="font-style: italic">Building blocks, remember?</p>
+					</section>
+					
+					<section>
+						<h5>Map 1</h5>
+						
+						<pre class="xml">
+							<code data-trim data-noescape>&lt;map id="id-singlemap1">
+    &lt;title>A to E as Single Map Title&lt;/title>
+    &lt;topichead navtitle="Chapter One Title">
+        &lt;topicref href="topicA.dita"/>
+        &lt;topicref href="topicB.dita"/>
+        &lt;topichead navtitle="Section One Navtitle">
+            &lt;topicref href="topicC.dita"/>
+        &lt;/topichead>
+        &lt;topichead navtitle="Section Two Navtitle">
+            &lt;topicref href="topicD.dita"/>
+            &lt;topicref href="topicE.dita"/>
+        &lt;/topichead>
+    &lt;/topichead>
+&lt;/map></code>
+						</pre>
+						
+						<p>Note topic E, last</p>
+					</section>
+					
+					<section>
+						<h5>Map 1 Imported</h5>
+						
+						<img src="img/singlemap1-pub.png" alt="Map 1 , first version"/>
+					</section>
+					
+					<section>
+						<h5>Map 2</h5>
+						
+						<pre class="xml">
+							<code data-trim data-noescape>&lt;map id="id-singlemap2">
+    &lt;title>A to E as Single Map Title&lt;/title>
+    &lt;topichead navtitle="Chapter One Title">
+        &lt;topicref href="topicA.dita"/>
+        &lt;topicref href="topicB.dita"/>
+        &lt;topichead navtitle="Section One Navtitle">
+            &lt;topicref href="topicC.dita"/>
+        &lt;/topichead>
+        &lt;topichead navtitle="Section Two Navtitle">
+            &lt;topicref href="topicD.dita"/>
+            &lt;topicref href="topicE.dita">
+                &lt;topicref href="topicF.dita"/>
+            &lt;/topicref>
+        &lt;/topichead>
+    &lt;/topichead>
+&lt;/map></code>
+						</pre>
+						
+						<p>Topic E now nests topic F</p>
+					</section>
+					
+					<section>
+						<h5>Map 2 Imported</h5>
+						
+						<img src="img/singlemap2-pub.png" alt="Map 2 imported"/>
+					</section>
+					
+					<section>
+						<h5>But Look At Map 1 Now</h5>
+						
+						<img src="img/singlemap1-changed-pub.png" alt="Map 1 has changed to include topic F"/>
 					</section>
 					
 					
@@ -210,6 +341,13 @@
 					</section>
 					
 				</section>
+				
+				
+				
+				<!-- FrameMaker+sSGML comparison -->
+				<!-- Know those franchise-built Lego kits? Started with small things for me: ships. Harry Potter? Star Wars? -->
+				<!-- Non-xml feels like pre-made lego blocks -->
+				<!-- You can't build anything you want -->
 				
 				
 				
