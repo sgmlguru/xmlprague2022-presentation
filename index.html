@@ -243,6 +243,20 @@
 					</section>
 					
 					<section>
+						<h5>Decompose</h5>
+						
+						<img src="img/itemid_map-bidirect_id-attr.png" alt="Mapping between DB item and XML attribute" class="fragment"/>
+						<img src="img/itemid_map-bidirect_pi.png" alt="Mapping between DB item and processing instruction" class="fragment"/>
+						<img src="img/doctitle-map-attr.png" alt="Mapping XML to a document title" class="fragment"/>
+						
+						<p class="fragment">(etc)</p>
+						
+						<aside class="notes">
+							<p>Rules map between database objects and XML nodes</p>
+						</aside>
+					</section>
+					
+					<section>
 						<h5>A Reminder</h5>
 						
 						<pre class="xml">
@@ -265,7 +279,7 @@
 						<h5>Map 1</h5>
 						
 						<pre class="xml">
-							<code data-trim data-noescape>&lt;map id="id-singlemap1">
+							<code data-trim data-noescape data-line-numbers="|11" data-fragment-index="1">&lt;map id="id-singlemap1">
     &lt;title>A to E as Single Map Title&lt;/title>
     &lt;topichead navtitle="Chapter One Title">
         &lt;topicref href="topicA.dita"/>
@@ -281,7 +295,7 @@
 &lt;/map></code>
 						</pre>
 						
-						<p>Note topic E, last</p>
+						<p class="fragment" data-fragment-index="1">Note topic E, last</p>
 					</section>
 					
 					<section>
@@ -295,7 +309,7 @@
 						<h5>Map 2</h5>
 						
 						<pre class="xml">
-							<code data-trim data-noescape>&lt;map id="id-singlemap2">
+							<code data-trim data-noescape data-line-numbers="|11-13" data-fragment-index="1">&lt;map id="id-singlemap2">
     &lt;title>A to E as Single Map Title&lt;/title>
     &lt;topichead navtitle="Chapter One Title">
         &lt;topicref href="topicA.dita"/>
@@ -313,7 +327,7 @@
 &lt;/map></code>
 						</pre>
 						
-						<p>Topic E now nests topic F</p>
+						<p class="fragment" data-fragment-index="1">Topic E now nests topic F</p>
 					</section>
 					
 					<section>
@@ -327,15 +341,99 @@
 						<h5>But Look At Map 1 Now</h5>
 						
 						<!-- ZOOM in -->
-						<img src="img/singlemap1-changed-pub.png" alt="Map 1 has changed to include topic F"/>
+						
+						<table>
+							<col style="width: 50%"/>
+							<col style="width: 50%"/>
+							<thead>
+								<tr>
+									<th>
+										<p>Before</p>
+									</th>
+									<th>
+										<p class="fragment" data-fragment-index="1">After</p>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<img src="img/singlemap1-pub.png" alt="Map 1 , first version"/>
+									</td>
+									<td>
+										<img src="img/singlemap1-changed-pub.png" alt="Map 1 has changed to include topic F" class="fragment" data-fragment-index="1"/>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<p class="fragment">Inheritance? Really??</p>
+						
+						<aside class="notes">
+							<p>ZOOM IN</p>
+						</aside>
 					</section>
-					
-					
 				</section>
 				
 				
 				
 				<section>
+					
+					<section>
+						<h3>What's Wrong with This Picture?</h3>
+					</section>
+					
+					<section>
+						<ul>
+							<li>Map XML tree to non-XML (incompatible) model</li>
+							<li>Mapping language
+								<ul>
+									<li>Not very powerful</li>
+									<li>Syntax leads to misunderstandings</li>
+									<li>Must be used for every decompose/compose</li>
+								</ul>
+							</li>
+							<li>XML hampered by non-XML limitations</li>
+						</ul>
+						
+						<aside class="notes">
+							<p>Your XML will only ever be as good as your non-XML implementation</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>It's Not the First</h5>
+						
+						<p class="fragment">FrameMaer+SGML, anyone?</p>
+						<p class="fragment">WordPerfect SGML</p>
+						<p class="fragment">MS Word plugins for SGML, XML</p>
+						<p class="fragment">(etc)</p>
+						
+						<aside class="notes">
+							<p>But these are all old</p>
+							<p>XML is a mature standard</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>Building Blocks, Remember?</h5>
+						
+						<div class="r-stack">
+							<img class="fragment" style="width: 25%" src="img/standard-lego.jpg" alt="Lego blocks in a box"/>
+							<img class="fragment" style="width: 35%" src="img/lego-hull.jpg" alt="Lego boat hull"/>
+							<img class="fragment" src="img/Lego-Imperial-Flagship-6271-Vintage-90s-Pirate-Bundleraft.jpg" style="width: 40%" alt="Lego pirate ship"/>
+							<img class="fragment" src="img/lego-titanic.jpg" style="width: 45%" alt="Lego Titanic"/>
+							<img class="fragment" src="img/lego-falcon.jpg" style="width: 70%" alt="Lego Millennium Falcon"/>
+						</div>
+						
+						<aside class="notes">
+							<p>If you deviate from the standard</p>
+							<p>there might be some pretty applications</p>
+							<p>but reuse becomes much harder</p>
+							<p>and in the end it's not LEGO anymore</p>
+						</aside>
+						
+					</section>
 					
 					<section>
 						<pre class="xml">
@@ -350,7 +448,7 @@
 				<!-- FrameMaker+sSGML comparison -->
 				<!-- Know those franchise-built Lego kits? Started with small things for me: ships. Harry Potter? Star Wars? -->
 				<!-- Non-xml feels like pre-made lego blocks -->
-				<!-- You can't build anything you want -->
+				<!-- You can't build everything you want -->
 				
 				
 				
@@ -368,6 +466,7 @@
 		<script src="../reveal.js/plugin/notes/notes.js"></script>
 		<script src="../reveal.js/plugin/markdown/markdown.js"></script>
 		<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="../reveal.js/plugin/zoom/zoom.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -376,7 +475,7 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
 			});
 		</script>
 	</body>
