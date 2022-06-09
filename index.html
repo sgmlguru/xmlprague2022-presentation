@@ -396,7 +396,7 @@
 								<ul>
 									<li>Not very powerful</li>
 									<li>Syntax leads to misunderstandings</li>
-									<li>Must be used for every decompose/compose</li>
+									<li>Used for every decompose/compose</li>
 								</ul>
 							</li>
 							<li>XML hampered by non-XML limitations</li>
@@ -408,9 +408,63 @@
 					</section>
 					
 					<section>
-						<h5>It's Not the First</h5>
+						<h5>For example, unmapped constructs in a bookmap</h5>
 						
-						<p class="fragment">FrameMaer+SGML, anyone?</p>
+						<!-- Map constructs NOT in the attribute mapping (toc, front matter...) -->
+						<pre class="xml fragment">
+							<code data-trim data-noescape>&lt;bookmap&gt;
+    &lt;booktitle&gt;
+        &lt;mainbooktitle&gt;&lt;/mainbooktitle&gt;
+    &lt;/booktitle&gt;
+    
+    &lt;frontmatter&gt;
+        &lt;booklists&gt;
+            &lt;toc/&gt;
+            &lt;tablelist/&gt;
+            &lt;figurelist/&gt;
+        &lt;/booklists&gt;
+    &lt;/frontmatter&gt;
+    
+    ...
+&lt;/bookmap&gt;</code>
+						</pre>
+						
+						<aside class="notes">
+							<p>Dual nature of toc (ref, empty marker)</p>
+							<p>Anything not in the attr mapping is a problem</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>For example, DITA profiling attributes</h5>
+						
+						<!-- Profiling @platform internally should be an array -->
+						<!-- @platform in DITA is a space-separated list but compose gives us commas -->
+						<pre class="xml fragment">
+							<code data-trim data-noescape>&lt;p platform=&quot;val1 val2 val3&quot;&gt;...&lt;/p&gt;</code>
+						</pre>
+						<p class="fragment" data-fragment-index="1">Internally @platform is an array, so decompose/compose both require tweaking</p>
+						<pre class="xml fragment" data-fragment-index="1">
+							<code data-trim data-noescape>&lt;p platform=&quot;val1, val2, val3&quot;&gt;...&lt;/p&gt;</code>
+						</pre>
+					</section>
+					
+					<section>
+						<h5>For example...</h5>
+						
+						<!-- Little things like that -->
+						<p>Etc</p>
+						
+						<aside class="notes">
+							<p>Little things like that</p>
+							<p>And some larger ones</p>
+						</aside>
+					</section>
+					
+					<section>
+						<h5>It's Not the First, Though</h5>
+						
+						<p class="fragment">FrameMaker+SGML, anyone?</p>
 						<p class="fragment">WordPerfect SGML</p>
 						<p class="fragment">MS Word plugins for SGML, XML</p>
 						<p class="fragment">(etc)</p>
@@ -461,8 +515,17 @@
 						<!--<img src="img/standards.png" style="width: 75%" alt="XML standards"/>-->
 						
 						<!--<h4 class="fragment" style="color: red; font-weight: bold; font-size: 52pt">Use the markup, stupid!</h4>-->
+						<aside class="notes">
+							<p>XML is a mature standard</p>
+							<p>Mature sister standards</p>
+							<p>Vocabularies</p>
+							<p>Tools</p>
+						</aside>
 					</section>
 					
+					<section>
+						<h3>Thank you</h3>
+					</section>
 					
 				</section>
 				
