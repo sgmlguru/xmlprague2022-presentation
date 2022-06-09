@@ -68,6 +68,9 @@
 						<h5>Topic-based Content</h5>
 						
 						<!-- DITA and S1000D image -->
+						<img src="img/lego-lot-airplane-parts.jpg" alt="LEGO airplane parts" style="width: 40%"/>
+						
+						<p>The PLM world loves DITA — BOMs make excellent topics</p>
 						
 						<aside class="notes">
 							<p>The PLM world loves DITA</p>
@@ -79,9 +82,12 @@
 						
 						<!-- Maps, PMs -->
 						<!-- Map images -->
+						<img src="img/lego-plane.png" alt="LEGO plane" style="width: 40%"/>
 						<!-- Reuse so different maps -->
 						
 						<aside class="notes">
+							<p>Combine your engineering data and topics</p>
+							<p>Build documents from topics</p>
 							<p>This is where the problems start in earnest</p>
 						</aside>
 					</section>
@@ -443,11 +449,11 @@
 						
 						<!-- Profiling @platform internally should be an array -->
 						<!-- @platform in DITA is a space-separated list but compose gives us commas -->
-						<pre class="xml fragment">
+						<pre class="xml fragment" data-fragment-index="1">
 							<code data-trim data-noescape>&lt;p platform=&quot;val1 val2 val3&quot;&gt;...&lt;/p&gt;</code>
 						</pre>
-						<p class="fragment" data-fragment-index="1">Internally @platform is an array, so decompose/compose both require tweaking</p>
-						<pre class="xml fragment" data-fragment-index="1">
+						<p class="fragment" data-fragment-index="2">Internally @platform is an array, so decompose/compose both require tweaking</p>
+						<pre class="xml fragment" data-fragment-index="2">
 							<code data-trim data-noescape>&lt;p platform=&quot;val1, val2, val3&quot;&gt;...&lt;/p&gt;</code>
 						</pre>
 					</section>
@@ -502,22 +508,20 @@
 				
 				
 				
-				<!-- FrameMaker+sSGML comparison -->
-				<!-- Know those franchise-built Lego kits? Started with small things for me: ships. Harry Potter? Star Wars? -->
-				<!-- Non-xml feels like pre-made lego blocks -->
-				<!-- You can't build everything you want -->
-				
-				
-				
 				<section>
 					<section>
-						<h5>In Closing</h5>
+						<h3>There's an Obvious Way Around This</h3>
+						<p class="fragment" data-fragment-index="1">Let's use the building blocks we have</p>
+						
+						<img class="fragment" data-fragment-index="1" src="img/lego-collection.jpg" alt="Standard LEGO pieces" style="width: 40%"/>
+						
+						<p class="fragment" data-fragment-index="2">They play nice together!</p>
 					</section>
 					
-					<section data-background="img/standards.png">
-						<!--<img src="img/standards.png" style="width: 75%" alt="XML standards"/>-->
+					<section data-background="img/standards1.png">
 						
-						<!--<h4 class="fragment" style="color: red; font-weight: bold; font-size: 52pt">Use the markup, stupid!</h4>-->
+						<h3 style="color: black; font-weight: bold; font-size: 58pt;" class="fragment">Use the Markup, Stupid!</h3>
+						
 						<aside class="notes">
 							<p>XML is a mature standard</p>
 							<p>Mature sister standards</p>
@@ -526,8 +530,8 @@
 						</aside>
 					</section>
 					
-					<section>
-						<h3>Thank you</h3>
+					<section data-background="img/standards1.png">
+						<h3 style="color: black; font-weight: bold; font-size: 58pt;">Thank you</h3>
 					</section>
 					
 				</section>
